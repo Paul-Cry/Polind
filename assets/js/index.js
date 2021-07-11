@@ -1,3 +1,12 @@
+let app = document.getElementById('app')
+
+window.addEventListener('load', ()=>{
+    let cumLoader = document.getElementById('cube-loader')
+    app.style.filter = 'blur(0)';
+    cumLoader.style.display = 'none';
+    document.body.style.overflow = 'visible'
+
+})
 
 
 // let  activeCard = document.querySelector('.swiper-slide-active').children[0]
@@ -79,18 +88,41 @@ function filter(){
 }
 
 let input = document.querySelector('.search-place-input').children[0]
-let searchA = document.querySelector('.search-place-input').children[1]
 let audio = document.getElementsByTagName('audio')[0]
+let exitAudio = document.querySelector('.audio').children[1]
+let windAudio = document.querySelector('.audio')
 let text = null
 input.onchange = function(){
     text = input.value 
 }
 
-searchA.onclick = function(){
-    if(text == 15){
+
+function startAudio(flag){
+    if(flag){
+        audio.setAttribute('src', '')
+        console.log(234)
+        windAudio.style.opacity = '0'
+        app.style.filter = 'blur(0)'
+        windAudio.style.display = 'none'
+        document.body.style.overflow = 'visible'
+    }else if(text == 15){
         input.value = ''
         audio.setAttribute('src', './assets/music/Maneskin - I Wanna Be Your Slave (mp3ha.org).mp3')
+        windAudio.style.display = 'flex'
+        document.body.style.overflow = 'hidden'
+        windAudio.style.opacity = '1'
+        app.style.filter = 'blur(5px)'
+        setTimeout(()=>{
+            audio.style.opacity = 1;
+            setTimeout(()=>{
+                exitAudio.style.opacity = 1;
+            },1000)
+        },3000)
     }
 }
+   
+
+
+
 
 
