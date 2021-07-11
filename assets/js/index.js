@@ -108,7 +108,11 @@ function startAudio(flag){
     }else if(text == 15){
         input.value = ''
         audio.setAttribute('src', './assets/music/Maneskin - I Wanna Be Your Slave (mp3ha.org).mp3')
+        
         windAudio.style.display = 'flex'
+        windAudio.children[2].classList.add('js-container')
+        conf()
+        
         document.body.style.overflow = 'hidden'
         windAudio.style.opacity = '1'
         app.style.filter = 'blur(5px)'
