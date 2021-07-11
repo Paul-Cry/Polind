@@ -53,8 +53,8 @@ function filter(){
     let animation = document.querySelector('.search-place-button_mobil').children[2]
     let row = document.querySelector('.search-place-button_mobil').children[1]
     if(filterFlag){
-        row.style.transform = 'rotate(180deg)'
         animation.style.marginTop = '49%'
+        row.style.transform = 'rotate(180deg)'
         setTimeout(()=>{
             mobilWind.style.height = '150px'
             // animation.style.display = ' none'
