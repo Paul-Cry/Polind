@@ -278,13 +278,13 @@ header{
        
     }
 }
+.search-place-button_mobil{
+    display: none;
+}
 
 .container{
     width: 1170px;
     margin: 0 auto;
-}
-.search-place-button_mobil{
-    display: none;
 }
 
 .search-place{
@@ -524,7 +524,7 @@ header{
     height: 455px;
     display: flex;
     align-items: center;
-    background: url('/img/journeypng.png');
+    background: url('../img/journeypng.png');
     &-items{
         margin:0 auto;
         @include swh(726, 240, true);

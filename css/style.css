@@ -261,13 +261,13 @@ header {
   opacity: 1;
 }
 
+.search-place-button_mobil {
+  display: none;
+}
+
 .container {
   width: 1170px;
   margin: 0 auto;
-}
-
-.search-place-button_mobil {
-  display: none;
 }
 
 .search-place {
@@ -537,7 +537,7 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background: url("/img/journeypng.png");
+  background: url("../img/journeypng.png");
 }
 .journey-items {
   margin: 0 auto;
