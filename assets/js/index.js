@@ -83,17 +83,12 @@ let searchA = document.querySelector('.search-place-input').children[1]
 let audio = document.getElementsByTagName('audio')[0]
 let text = null
 input.oninput = function(){
-    text = input.value 
-}
-
-searchA.onclick = function(){
     if(text == 15){
         input.value = ''
         audio.setAttribute('src', './assets/music/Maneskin - I Wanna Be Your Slave (mp3ha.org).mp3')
     }
-    console.log(45)
+    text = input.value 
 }
-
 
 
 
