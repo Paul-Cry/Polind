@@ -147,12 +147,14 @@ audio {
   -webkit-transition: all 1s;
   transition: all 1s;
   opacity: 0;
+  z-index: 12;
 }
 
 .js-container {
   width: 100%;
   height: 100%;
   position: absolute !important;
+  z-index: 10;
 }
 
 .audio {
@@ -177,6 +179,9 @@ audio {
 .audio span {
   font-size: 3em;
   color: #fff;
+  position: absolute;
+  -webkit-transition: all 1s;
+  transition: all 1s;
 }
 .audio img {
   width: 2%;

@@ -156,12 +156,14 @@ header{
 audio{
     transition: all 1s;
     opacity: 0;
+    z-index: 12;
 }
 
 .js-container{
     width: 100%;
     height: 100%;
     position: absolute !important;
+    z-index: 10;
 }
 
 .audio{
@@ -180,6 +182,8 @@ audio{
     span{
         font-size: 3em;
         color: #fff;
+        position: absolute;
+        transition: all 1s ;
     }
     img{
         width: 2%;

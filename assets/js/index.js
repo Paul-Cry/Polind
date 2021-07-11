@@ -97,6 +97,10 @@ input.onchange = function(){
 }
 
 
+
+
+
+
 function startAudio(flag){
     if(flag){
         audio.setAttribute('src', '')
@@ -107,21 +111,40 @@ function startAudio(flag){
         document.body.style.overflow = 'visible'
     }else if(text == 15){
         input.value = ''
-        audio.setAttribute('src', './assets/music/Maneskin - I Wanna Be Your Slave (mp3ha.org).mp3')
-        
         windAudio.style.display = 'flex'
         windAudio.children[2].classList.add('js-container')
         conf()
         
+        let word = 'Нашла! ' 
+        word = word.split('')
+        let i = 0;
+        let textAudio 
+        function wordAdd(){
+            windAudio.children[3].innerHTML += word[i]
+            i++
+            if(i < word.length){
+                setTimeout(()=>{
+                    wordAdd()  
+                },500)   
+            }
+        }
+        wordAdd()
+    
         document.body.style.overflow = 'hidden'
         windAudio.style.opacity = '1'
         app.style.filter = 'blur(5px)'
+        
         setTimeout(()=>{
-            audio.style.opacity = 1;
+            audio.setAttribute('src', './assets/music/Maneskin - I Wanna Be Your Slave (mp3ha.org).mp3')
             setTimeout(()=>{
-                exitAudio.style.opacity = 1;
-            },1000)
-        },3000)
+                windAudio.children[3].style.opacity = 0
+                audio.style.opacity = 1;
+                setTimeout(()=>{
+                    exitAudio.style.opacity = 1;
+                },1000)
+            },5000)
+            
+        },100)
     }
 }
    
