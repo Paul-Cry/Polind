@@ -29,6 +29,7 @@ header {
 
 audio {
   opacity: 0;
+  display: none;
 }
 
 @-webkit-keyframes colorAudio {
