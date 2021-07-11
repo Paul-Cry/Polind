@@ -5,28 +5,311 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <title>Polind</title>
 </head>
-<body>
-    <header>
-        <nav class="navigation">
-            <div class="logo-block">
-                <img src="/img/Logo.png" alt="" class="logo__image">
-                <span class="logo-block__text"></span>
+<body >
+    <div id='app'>
+        <header>
+            <nav class="navigation">
+                <div class="logo-block">
+                    <img src="../img/Logo.png" alt="" class="logo__image">
+                    <span class="logo-block__text">Polind</span>
+                </div>
+                <div class="burger" onclick='activeBurger(true)'>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+               
+                <div class="navigation__items">
+                    <ul>
+                        <li>Guide</li>
+                        <li>Journey</li>
+                        <li>Hotels</li>
+                        <li>Travelers</li>
+                    </ul>
+                    <img src="../img/Search.png" alt="" class="search">
+                    <img src="/img/cancel.svg" alt="" class='exit' onclick='activeBurger(false)'>
+                </div>
+            </nav>
+           
+            <div class="header-text">
+                <div class=" header-text__title ">
+                    <div class="header-text__title_white">Fall in love</div>
+                    <div class="header-text__title_red">with Poland</div>
+                </div>
+                <div class="header-text__text">Best way to find your perfect place in Poland</div>
+                <button class="button button__header">
+                    SEARCH YOUR PLACE
+                </button>
             </div>
-            <div class="navigation__items">
-                <ul>
-                    <li>Guide</li>
-                    <li>Journey</li>
-                    <li>Hotels</li>
-                    <li>Travelers</li>
-                </ul>
-                <img src="/img/Search.png" alt="" class="navigation__search">
+        </header>
+        <div class="slider swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="slider-card zakopane">
+                        <div class="slider-card-items ">
+                            <div class="slider-card-items__title">Zakopane</div>
+                            <div class="slider-card-items__subtiltel">Małopolskie</div>  
+                        </div>
+                        <div class="button slider-card__button">VIEW OFFERS</div> 
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="slider-card sopot">
+                        <div class="slider-card-items ">
+                            <div class="slider-card-items__title">Sopot</div>
+                            <div class="slider-card-items__subtiltel">Pomorskie</div>  
+                        </div>
+                        <div class="button slider-card__button">VIEW OFFERS</div> 
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="slider-card sandomierz">
+                        <div class="slider-card-items ">
+                            <div class="slider-card-items__title">Sandomierz</div>
+                            <div class="slider-card-items__subtiltel">Swietokrzyskie</div>  
+                        </div>
+                        <div class="button slider-card__button">VIEW OFFERS</div> 
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="slider-card todark">
+                        <div class="slider-card-items">
+                            <div class="slider-card-items__title">Zakopane</div>
+                            <div class="slider-card-items__subtiltel">Małopolskie</div>  
+                        </div>
+                        <div class="button slider-card__button">VIEW OFFERS</div> 
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="slider-card imgdark">
+                        <div class="slider-card-items">
+                            <div class="slider-card-items__title">Sandomierz</div>
+                            <div class="slider-card-items__subtiltel">Swietokrzyskie</div>  
+                        </div>
+                        <div class="button slider-card__button">VIEW OFFERS</div> 
+                    </div>
+                </div>
             </div>
-        </nav>
-    </header>
-    <div></div>
-
- <script src="./assets/js/index.js"></script>
+        </div>
+        <div class="search-place-screen">
+            <div class="search-place">
+                <div class="container">
+                    <p class="search-place__title">Where you want to go?</p>
+                    <div class="search-place-choose">
+                        <div class="search-place-input">
+                            <input type="text" placeholder="Search place">
+                            <img src="../img/Search.png" alt="">
+                        </div>
+                        <div class="search-place-button" >
+                            <div class="search-place-type">
+                                <div class="search-place-type__items search-place-type__items_active">Journey</div>
+                                <div class="search-place-type__items">Travelers</div>
+                                <div class="search-place-type__items">Guide</div>
+                            </div>
+                            <div class="search-place-city">
+                                <div class="search-place-city__items">Mazury</div>
+                                <div class="search-place-city__items">Cracow</div>
+                                <div class="search-place-city__items">Zakopane</div>
+                            </div>     
+                        </div>
+                        <div class="search-place-button_mobil">
+                                
+                            <div class="search-place-button-items">
+                                <div><input type="checkbox" name="" id=""><label for="">Journey</label></div>
+                                <div><input type="checkbox" name="" id=""><label for="">Travelers</label></div>
+                                <div><input type="checkbox" name="" id=""><label for="">Guide</label></div>
+                                <div><input type="checkbox" name="" id=""><label for="">Mazury</label></div>
+                                <div><input type="checkbox" name="" id=""><label for="">Cracow</label></div>
+                                <div><input type="checkbox" name="" id=""><label for="">Zakopane</label></div>
+                            </div>
+                            <img src="/img/filter.png" alt="" onclick='filter()'>
+                            <div></div>
+                        </div>
+                    </div>
+                    <div class="search-place-grid">
+                        <div class="search-place-row">
+                            <div class="search-place-card">
+                                <img src="../img/Photo.png" alt="">
+                                <div class="search-place-card__text">
+                                    <div class="title">Poznan</div>
+                                    <div class="subtitel">Wielkopolskie</div>
+                                </div>
+                                <div class="button search-place-card__button">VIEW OFFERS</div>
+                            </div>
+                            <div class="search-place-card">
+                                <img src="../img/Photo1.png" alt="">
+                                <div class="search-place-card__text">
+                                    <div class="title">Warsaw</div>
+                                    <div class="subtitel">Mazowieckie</div>
+                                </div>
+                                <div class="button search-place-card__button">VIEW OFFERS</div>
+                            </div>
+                            <div class="search-place-card">
+                                <img src="../img/Photo2.png" alt="">
+                                <div class="search-place-card__text">
+                                    <div class="title">Wroclaw</div>
+                                    <div class="subtitel">Dolnoslaskie</div>
+                                </div>
+                                <div class="button search-place-card__button">VIEW OFFERS</div>
+                            </div>
+                        </div>
+                        <div class="search-place-col">
+                                <div class="search-place-card">
+                                    <img src="../img/Photo3.png" alt="">
+                                    <div class="search-place-card__text">
+                                        <div class="title">Karpacz</div>
+                                        <div class="subtitel">Dolnoslaskie</div>
+                                    </div>
+                                    <div class="button search-place-card__button">VIEW OFFERS</div>
+                                </div>
+                                <div class="search-place-card">
+                                    <img src="../img/Photo4.png" alt="">
+                                    <div class="search-place-card__text">
+                                        <div class="title">Dolina Olczyska</div>
+                                        <div class="subtitel">Malopolskie</div>
+                                    </div>
+                                    <div class="button search-place-card__button">VIEW OFFERS</div>
+                                </div>
+                                <div class="search-place-card">
+                                    <img src="../img/Photo5.png" alt="">
+                                    <div class="search-place-card__text">
+                                        <div class="title">Kozy</div>
+                                        <div class="subtitel">Slaskie</div>
+                                    </div>
+                                    <div class="button search-place-card__button">VIEW OFFERS</div>
+                            </div>
+            
+                        </div>
+                    </div>
+                    <div class="search-place-grid_mobil">
+                        <div class="search-place-card">
+                            <img src="../img/Photo.png" alt="">
+                            <div class="search-place-card__text">
+                                <div class="title">Poznan</div>
+                                <div class="subtitel">Wielkopolskie</div>
+                            </div>
+                            <div class="button search-place-card__button">VIEW OFFERS</div>
+                        </div>
+                        <div class="search-place-card">
+                            <img src="../img/Photo1.png" alt="">
+                            <div class="search-place-card__text">
+                                <div class="title">Warsaw</div>
+                                <div class="subtitel">Mazowieckie</div>
+                            </div>
+                            <div class="button search-place-card__button">VIEW OFFERS</div>
+                        </div>
+                        <div class="search-place-card">
+                            <img src="../img/Photo2.png" alt="">
+                            <div class="search-place-card__text">
+                                <div class="title">Wroclaw</div>
+                                <div class="subtitel">Dolnoslaskie</div>
+                            </div>
+                            <div class="button search-place-card__button">VIEW OFFERS</div>
+                        </div>
+                            <div class="search-place-card">
+                                <img src="../img/Photo3.png" alt="">
+                                <div class="search-place-card__text">
+                                    <div class="title">Karpacz</div>
+                                    <div class="subtitel">Dolnoslaskie</div>
+                                </div>
+                                <div class="button search-place-card__button">VIEW OFFERS</div>
+                            </div>
+                            <div class="search-place-card">
+                                <img src="../img/Photo4.png" alt="">
+                                <div class="search-place-card__text">
+                                    <div class="title">Dolina Olczyska</div>
+                                    <div class="subtitel">Malopolskie</div>
+                                </div>
+                                <div class="button search-place-card__button">VIEW OFFERS</div>
+                            </div>
+                            <div class="search-place-card">
+                                <img src="../img/Photo5.png" alt="">
+                                <div class="search-place-card__text">
+                                    <div class="title">Kozy</div>
+                                    <div class="subtitel">Slaskie</div>
+                                </div>
+                                <div class="button search-place-card__button">VIEW OFFERS</div>
+                        </div>
+                    </div>
+                </div>   
+            </div>
+       
+       
+        </div>
+        <div class="explore">
+            <div class="explore-background">
+                <div class="explore-background__text">
+                    SAN
+                </div>
+                <div class="explore-background__text">
+                    DOM
+                </div>
+                <div class="explore-background__text">
+                    IERZ
+                </div>
+            </div>
+           
+            
+            <div class="container explore-inner">
+                <div class="explore__titel">
+                    Explore city
+                </div>
+                <div class="explore-box">
+                    <div class="explore-box-content">
+                        <div class="explore-box-content__title">Sandomierz</div>
+                        <div class="explore-box-content__text">
+                            Sandomierz is one of the oldest and historically most significant 
+                            cities in Poland. Archeological finds around the city indicate that humans 
+                            have inhabited the area since neolithic times. 
+                            The city came into existence in the early Middle Ages, taking advantage of an excellent 
+                            location at the junction of Vistula and San rivers, 
+                            and on the path of important trade routes. 
+                            <br>
+                            <br>
+    
+    
+                            The first known historical mention of the city comes from the early 
+                            12th-century, when the chronicler Gallus 
+                            Anonymus ranked it together with Kraków and Wrocław as one of the main cities of Poland.
+                            The testament (ca 1115-1118) of Bolesław III Wrymouth, in which he divided Poland among his sons,
+                            designated Sandomierz as the capital of one of the resulting principalities, the Duchy of Sandomierz.
+                        </div>
+                        <div class="explore-box-content__button ">CHECK OFFERS</div>
+                        
+                    </div>
+                    <div class="explore-image">
+                        <img src="../img/exploer.png" alt="">
+                        <div class="explore-image__border"></div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="journey">
+            <div class="journey-items">
+                <div class="journey-items__titel">Enjoy your journey</div>
+                <div class="journey-items__button">SIGN UP</div>
+                <div class="journey-items__link">You can also sign up on our <a>newsletter</a></div>
+                
+                
+                
+            </div>
+            
+        </div>
+        <footer>
+            <div class="footer-background__text">POLIND</div>
+            <div class="footer-items">
+                <img src="./img/Logo.png" alt="" class='footer-items__img' >
+                <div class="footer__subtitle">All rights reserved by symu.co</div>
+            </div>
+            
+        </footer>
+    </div>
+    
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="./assets/js/index.js"></script>
 </body>
 </html>
