@@ -69,7 +69,26 @@ header{
     display: none;
 }
     
-    
+audio{
+    opacity: 0;
+}
+// .audio{
+//     width: 100vw;
+//     height: 100vh;
+//     position: fixed;
+//     top: 0;
+//     left: 0;
+//     transition: all 1s ease-in-out;
+//     animation: colorAudio 1s ease-in-out forwards;
+   
+// }
+
+@keyframes colorAudio{
+    100%{
+        background: linear-gradient(rgba(0, 0, 0, 0.412), rgba(0, 0, 0, 0.412));
+    }
+}
+
 .navigation{
     height: 68px;
     width: 93%;

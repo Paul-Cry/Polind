@@ -27,6 +27,23 @@ header {
   display: none;
 }
 
+audio {
+  opacity: 0;
+}
+
+@-webkit-keyframes colorAudio {
+  100% {
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.412)), to(rgba(0, 0, 0, 0.412)));
+    background: linear-gradient(rgba(0, 0, 0, 0.412), rgba(0, 0, 0, 0.412));
+  }
+}
+
+@keyframes colorAudio {
+  100% {
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.412)), to(rgba(0, 0, 0, 0.412)));
+    background: linear-gradient(rgba(0, 0, 0, 0.412), rgba(0, 0, 0, 0.412));
+  }
+}
 .navigation {
   height: 68px;
   width: 93%;
