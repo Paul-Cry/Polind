@@ -1521,4 +1521,8 @@ footer {
   .footer-background__text {
     font-size: 8em;
   }
+
+  .audio img {
+    width: 5%;
+  }
 }
