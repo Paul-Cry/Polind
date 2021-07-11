@@ -266,6 +266,10 @@ header {
   margin: 0 auto;
 }
 
+.search-place-button_mobil {
+  display: none;
+}
+
 .search-place {
   position: relative;
   top: 13%;
