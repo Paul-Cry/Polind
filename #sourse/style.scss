@@ -254,7 +254,8 @@ header{
 .swiper-slide{
     &-active  , &-duplicate-prev{
         .slider-card{
-            // background: linear-gradient(rgba(0, 0, 0, 0.611),rgba(0, 0, 0, 0.611));
+         
+           
             &:hover{
                 .button{
                     opacity: 1;
@@ -641,6 +642,7 @@ footer{
     }
     .search-place-card__button{
         width: 30%;
+        
         padding: 3.5% 8%;  
     }
 
@@ -1048,6 +1050,7 @@ footer{
                 &{
                     .button{
                         opacity: 1 !important;
+                        font-size: 0.9em;
                     }
                     .slider-card-items{
                         opacity: 1;

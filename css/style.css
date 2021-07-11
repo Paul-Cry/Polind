@@ -1152,6 +1152,7 @@ footer {
   }
   .swiper-slide-active .slider-card .button {
     opacity: 1 !important;
+    font-size: 0.9em;
   }
   .swiper-slide-active .slider-card .slider-card-items {
     opacity: 1;
