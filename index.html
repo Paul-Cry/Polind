@@ -327,6 +327,22 @@
         <img src="./img/cancel — копия.png" alt="" onclick='startAudio(true)'>
         <div class=""></div>
         <span class="text"></span>
+        <div class="key">
+            <div class="key__text">Введите кодовое слово</div>
+            <div class="key-inner">
+                <div class="key-block-input">
+                    <label for="key__input" class='error'>Не то слово</label>
+                    <input type="text" class="key__input" placeholder="Кодовое слово">
+                </div>
+                <div class="key__button button" onclick='checkKey(true)'>Отправить</div>
+            </div>
+            <div class="key__help" onclick='keyHelp()'>Подсказка</div>
+            <div class="key-help">
+                Это слово находиться в стихотворении "У лукоморья дуб зеленый".
+                На 7 строчке 2 слово
+            </div>
+
+        </div>
     </div>
    
     <!-- src='./assets/music/Maneskin - I Wanna Be Your Slave (mp3ha.org).mp3' -->

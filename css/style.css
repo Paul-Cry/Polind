@@ -176,12 +176,101 @@ audio {
   -webkit-transition: opacity 3s ease-in-out;
   transition: opacity 3s ease-in-out;
 }
+.audio .key {
+  width: 30%;
+  height: 25%;
+  padding: 3% 4%;
+  z-index: 70;
+  margin: 0 auto;
+  position: absolute;
+  background-color: white;
+  border-radius: 5px;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  opacity: 0;
+  left: 0;
+  right: 0;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+}
+.audio .key-block-input {
+  position: relative;
+}
+.audio .key__text {
+  text-align: center;
+  font-size: 2em;
+  color: black;
+}
+.audio .key__button {
+  height: 20px;
+  cursor: pointer;
+  padding: 1.5% 5%;
+  color: black;
+  -webkit-box-shadow: 0 0 40px rgba(0, 0, 0, 0.104);
+          box-shadow: 0 0 40px rgba(0, 0, 0, 0.104);
+  font-size: 1em;
+}
+.audio .key-inner {
+  margin-top: 2%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 50%;
+}
+.audio .key-inner input {
+  border-radius: 5px;
+  font-size: 1.2em;
+  border: 1px solid;
+  -webkit-box-shadow: 0 0 40px rgba(0, 0, 0, 0.241);
+          box-shadow: 0 0 40px rgba(0, 0, 0, 0.241);
+  outline: none;
+  height: 30px;
+  padding-left: 2.5%;
+}
+.audio .key-inner label {
+  font-size: 0.8em;
+  position: absolute;
+  bottom: 110%;
+  color: red;
+  opacity: 0;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+.audio .key-help {
+  width: 50%;
+  height: 40%;
+  margin-top: 5%;
+  opacity: 0;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  font-size: 0.8em;
+  background: #f0f0f0;
+  border-radius: 5px;
+  padding: 2% 1%;
+}
+.audio .key__help {
+  color: black;
+  font-size: 1em;
+  border-bottom: 2px dotted;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  cursor: pointer;
+}
 .audio span {
   font-size: 3em;
   color: #fff;
   position: absolute;
   -webkit-transition: all 1s;
   transition: all 1s;
+  margin: 0;
 }
 .audio img {
   width: 2%;
@@ -1452,7 +1541,7 @@ footer {
   }
   .search-place-card {
     width: 80%;
-    height: 240px;
+    height: 260px;
     margin-top: 13%;
     -webkit-transition: all 1s;
     transition: all 1s;
@@ -1476,6 +1565,35 @@ footer {
   .search-place input {
     font-size: 1.5em;
     padding-left: 7%;
+  }
+
+  .key {
+    width: 80% !important;
+    height: 50% !important;
+    padding: 4% 4% !important;
+  }
+  .key-inner {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: 40% !important;
+    -webkit-box-pack: start !important;
+        -ms-flex-pack: start !important;
+            justify-content: start !important;
+    margin-top: 50px !important;
+  }
+  .key__button {
+    margin-top: 10% !important;
+    height: 15px !important;
+    padding: 3% 9% !important;
+  }
+  .key-help {
+    width: 60% !important;
+    height: -webkit-min-content !important;
+    height: -moz-min-content !important;
+    height: min-content !important;
+    font-size: 1em !important;
   }
 
   .explore {

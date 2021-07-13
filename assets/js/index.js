@@ -54,7 +54,7 @@ function activeBurger(flag){
         
 }
 
-let filterFlag = true
+
 
 function filter(){
     let blockFilter = document.querySelector('.search-place-button-items')
@@ -92,14 +92,105 @@ let audio = document.getElementsByTagName('audio')[0]
 let exitAudio = document.querySelector('.audio').children[1]
 let windAudio = document.querySelector('.audio')
 let text = null
-input.onchange = function(){
+
+
+input.addEventListener("change" , ()=>{
     text = input.value 
+   
+})
+
+let flagHelp = true
+function keyHelp(){
+    if(flagHelp){
+        document.querySelector('.key-help').style.opacity = 1
+        flagHelp = !flagHelp;
+    }else{
+        document.querySelector('.key-help').style.opacity = 0
+        flagHelp = !flagHelp;
+    }
+}
+
+let i = 0;
+function Split(word){
+    return word.split('')
+}
+function wordAdd(tag, words){
+    tag.innerHTML += words[i]
+    console.log(words)
+    i++
+    if(i < words.length){
+        setTimeout(()=>{
+            wordAdd(tag, words)  
+        },300)   
+    }else{
+        setTimeout(()=>{
+            tag.style.opacity = 0
+            setTimeout(()=>{
+                
+                tag.innerHTML  = ''
+                tag.style.opacity = 1
+                i = 0
+            
+            }, 800)
+        }, 500)
+       
+       
+        
+    }
+}
+
+let keyInput = document.querySelector('.key__input')
+function checkKey(flag){  
+   
+    let error = document.querySelector('.error');
+    document.querySelector('.key').style.opacity = 1;
+    if(flag){
+        if(keyInput.value == 'чудеса' || keyInput.value == 'Чудеса'){
+            document.querySelector('.key').style.opacity = 0; 
+            windAudio.children[2].classList.add('js-container')
+            conf()
+            wordAdd(windAudio.children[3], Split('Та дам! '))
+            setTimeout(()=>{
+                audio.setAttribute('src', './assets/music/Maneskin - I Wanna Be Your Slave (mp3ha.org).mp3')
+                setTimeout(()=>{
+                    windAudio.children[3].style.opacity = 0
+                    audio.style.opacity = 1;
+                    setTimeout(()=>{
+                        exitAudio.style.opacity = 1;
+                    },1000)
+                },5000)
+            },100)
+        }else{
+            error.style.opacity = 1
+            setTimeout(()=>{
+                error.style.opacity = 0
+            }, 800)
+        }
+    }
+    
+}
+    
+function message(){
+    input.value = ''
+    windAudio.style.display = 'flex'
+    windAudio.style.opacity = '1'
+    document.body.style.overflow = 'hidden'
+    app.style.filter = 'blur(5px)'
+    setTimeout(()=>{
+        wordAdd(windAudio.children[3], Split('Правильно!'))
+    },1000)
+    setTimeout(()=>{
+        wordAdd(windAudio.children[3], Split('Но это ещё не всё '))
+        setTimeout(() => {
+            checkKey()
+            
+        }, 8000)
+    },5000)
 }
 
 
 
-
-
+let filterFlag = true
 
 function startAudio(flag){
     if(flag){
@@ -109,44 +200,12 @@ function startAudio(flag){
         app.style.filter = 'blur(0)'
         windAudio.style.display = 'none'
         document.body.style.overflow = 'visible'
-    }else if(text == 15){
-        input.value = ''
-        windAudio.style.display = 'flex'
-        windAudio.children[2].classList.add('js-container')
-        conf()
-        
-        let word = 'Нашла! ' 
-        word = word.split('')
-        let i = 0;
-        let textAudio 
-        function wordAdd(){
-            windAudio.children[3].innerHTML += word[i]
-            i++
-            if(i < word.length){
-                setTimeout(()=>{
-                    wordAdd()  
-                },500)   
-            }
-        }
-        wordAdd()
-    
-        document.body.style.overflow = 'hidden'
-        windAudio.style.opacity = '1'
-        app.style.filter = 'blur(5px)'
-        
-        setTimeout(()=>{
-            audio.setAttribute('src', './assets/music/Maneskin - I Wanna Be Your Slave (mp3ha.org).mp3')
-            setTimeout(()=>{
-                windAudio.children[3].style.opacity = 0
-                audio.style.opacity = 1;
-                setTimeout(()=>{
-                    exitAudio.style.opacity = 1;
-                },1000)
-            },5000)
-            
-        },100)
+    }else if(text == 15){   
+        keyInput.value = ''
+        message()
     }
-}
+    }
+
    
 
 

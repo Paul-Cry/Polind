@@ -170,6 +170,81 @@ audio{
     width: 100vw;
     height: 100vh;
     display: none;
+    .key{
+        width: 30%;
+        height: 25%;
+        padding: 3% 4%;
+        z-index: 70;
+        margin: 0 auto;
+        position: absolute;
+        background-color: white;
+        border-radius: 5px;
+        transition: all 1s;
+        opacity: 0;
+        &-block-input{
+            position: relative;
+        }
+        left: 0;
+        right: 0;
+        top: 50%;
+        transform: translate( 0, -50%);
+        &__text{
+            text-align: center;
+            font-size: 2em;
+            color: rgb(0, 0, 0);
+        }
+        &__button{
+            height: 20px;
+            cursor: pointer;
+            padding: 1.5% 5%;
+            color: rgb(0, 0, 0);
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.104);
+            font-size: 1em;
+        }
+        &-inner{
+            margin-top: 2%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 50%;
+            input{
+                border-radius: 5px;
+                font-size: 1.2em;
+                border: 1px solid;
+                box-shadow: 0 0 40px rgba(0, 0, 0, 0.241);
+                outline: none;
+                height: 30px;
+                padding-left: 2.5%;
+            }
+            label{
+                font-size: 0.8em;
+                position: absolute;
+                bottom: 110%;
+                color: red;
+                opacity: 0;
+                transition: all 1s;
+                
+            }
+        }
+        &-help{
+            width: 50%;
+            height: 40%;
+            margin-top: 5%;
+            opacity: 0;
+            transition: all 1s;
+            font-size: 0.8em;
+            background: #f0f0f0;
+            border-radius: 5px;
+            padding: 2% 1%;
+        }
+        &__help{
+            color: rgb(0, 0, 0);
+            font-size: 1em;
+            border-bottom: 2px dotted;
+            width: min-content;
+            cursor: pointer;
+        }
+    }
     align-items: center;
     justify-content: center;
     position: fixed;
@@ -184,6 +259,8 @@ audio{
         color: #fff;
         position: absolute;
         transition: all 1s ;
+        margin: 0;
+        
     }
     img{
         width: 2%;
@@ -1273,7 +1350,7 @@ footer{
         }
         &-card{
             width: 80%;
-            height: 240px;
+            height: 260px;
             margin-top: 13%;
             transition: all 1s;
             &__button{
@@ -1301,6 +1378,27 @@ footer{
             font-size: 1.5em;
             padding-left: 7%;
            
+        }
+    }
+    .key{
+        width: 80% !important;
+        height: 50% !important;
+        padding: 4% 4%  !important;
+        &-inner{
+            flex-direction: column;
+            height: 40% !important;
+            justify-content: start !important;
+            margin-top: 50px !important;
+        }
+        &__button{
+            margin-top: 10% !important;
+            height: 15px !important;
+            padding: 3% 9% !important;
+        }
+        &-help{
+            width: 60% !important;
+            height: min-content !important; 
+            font-size: 1em  !important;     
         }
     }
 
