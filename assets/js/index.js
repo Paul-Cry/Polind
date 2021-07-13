@@ -141,7 +141,7 @@ function wordAdd(tag, words){
 
 let keyInput = document.querySelector('.key__input')
 function checkKey(flag){  
-   
+    document.querySelector('.key__help').style.opacity = 0
     let error = document.querySelector('.error');
     document.querySelector('.key').style.opacity = 1;
     if(flag){
@@ -165,6 +165,9 @@ function checkKey(flag){
             setTimeout(()=>{
                 error.style.opacity = 0
             }, 800)
+            setTimeout(()=>{
+                document.querySelector('.key__help').style.opacity = 1
+            }, 1000)
         }
     }
     
